@@ -27,6 +27,6 @@ Le but est de survivre le plus longtemps possible tout en explorant différentes
 
 1. Clone le dépôt :
    ```bash
-   git clone https://github.com/ton-utilisateur/Sir-Smash-a-Lot-for.Godot-4.4.1-version-TM.git
+   git clone https://github.com/Mathaque64/Sir-Smash-a-Lot-for.Godot-4.4.1-version-TM.git
 
  
