@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxkgcjvfcrpwp"]
+
+[ext_resource type="Texture2D" uid="uid://cgkvv2ee2ec21" path="res://art/barre d'information/coeur.png" id="1_11lx3"]
+[ext_resource type="Script" uid="uid://i2s5smc8d6nu" path="res://scriptes/code/label_health.gd" id="2_vh20b"]
+[ext_resource type="Texture2D" uid="uid://bovj12nrkqjv2" path="res://art/barre d'information/score.png" id="3_pocyc"]
+[ext_resource type="Script" uid="uid://h67ox4ab6fb4" path="res://scriptes/code/labelscore.gd" id="4_8voqx"]
+
+[node name="GUI" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="health" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 3.37
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/health"]
+layout_mode = 2
+texture = ExtResource("1_11lx3")
+expand_mode = 2
+
+[node name="LabelHealth" type="Label" parent="MarginContainer/health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "100"
+script = ExtResource("2_vh20b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_pocyc")
+
+[node name="Labelscore" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+script = ExtResource("4_8voqx")

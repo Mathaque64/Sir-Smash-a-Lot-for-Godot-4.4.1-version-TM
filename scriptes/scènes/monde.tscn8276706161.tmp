@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxsuycjd58l7o"]
+
+[ext_resource type="PackedScene" uid="uid://car7l0s3xxju5" path="res://scriptes/scènes/joueur.tscn" id="1_1mx0b"]
+[ext_resource type="PackedScene" uid="uid://bxkgcjvfcrpwp" path="res://scriptes/scènes/ui.tscn" id="4_x88b8"]
+[ext_resource type="PackedScene" uid="uid://dyeflhjal26ia" path="res://scriptes/scènes/DungeonManager.tscn" id="9_623jy"]
+
+[node name="monde" type="Node2D"]
+
+[node name="DungeonManager" parent="." instance=ExtResource("9_623jy")]
+player_path = NodePath("../joueur")
+
+[node name="joueur" parent="." instance=ExtResource("1_1mx0b")]
+position = Vector2(-4, -5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 88)
+
+[node name="UI" parent="Camera2D" instance=ExtResource("4_x88b8")]
+follow_viewport_enabled = false

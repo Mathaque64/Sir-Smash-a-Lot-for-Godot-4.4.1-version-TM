@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxsuycjd58l7o"]
+
+[ext_resource type="PackedScene" uid="uid://car7l0s3xxju5" path="res://scriptes/scènes/joueur.tscn" id="1_1mx0b"]
+[ext_resource type="Script" uid="uid://bkb7bicfyi0ng" path="res://scriptes/code/gestion_musique.gd" id="4_7yphc"]
+[ext_resource type="PackedScene" uid="uid://bxkgcjvfcrpwp" path="res://scriptes/scènes/ui.tscn" id="4_x88b8"]
+[ext_resource type="AudioStream" uid="uid://bfukx5hcwawwm" path="res://art/Music/Ambientmusic1.wav" id="5_jhawg"]
+[ext_resource type="AudioStream" uid="uid://ein0y5mtln1f" path="res://art/Music/Ambientmusic2.wav" id="6_fe6ak"]
+[ext_resource type="PackedScene" uid="uid://dyeflhjal26ia" path="res://scriptes/scènes/DungeonManager.tscn" id="9_623jy"]
+
+[node name="monde" type="Node2D"]
+
+[node name="DungeonManager" parent="." instance=ExtResource("9_623jy")]
+player_path = NodePath("joueur")
+
+[node name="joueur" parent="DungeonManager" instance=ExtResource("1_1mx0b")]
+position = Vector2(0, 142)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 88)
+
+[node name="UI" parent="Camera2D" instance=ExtResource("4_x88b8")]
+follow_viewport_enabled = false
+
+[node name="gestion_musique" type="Node2D" parent="."]
+script = ExtResource("4_7yphc")
+
+[node name="Music1" type="AudioStreamPlayer" parent="gestion_musique"]
+stream = ExtResource("5_jhawg")
+
+[node name="Music2" type="AudioStreamPlayer" parent="gestion_musique"]
+stream = ExtResource("6_fe6ak")
